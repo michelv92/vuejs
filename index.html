@@ -4,8 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="src/app.js" defer></script>
 </head>
 <body>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <div id="app">
+
+        <form id="app-form">
+            <input type="text" v-model="input_nome" placeholder="Nome"><br><br>
+            <input type="text" v-model="input_sobrenome" placeholder="Sobrenome"><br><br>
+            <input type="number" v-model="input_idade" placeholder="Idade"><br><br>
+            <input type="submit" value="Enviar" v-on:click="submitForm">
+        </form>
+
+        <hr>
+        <p>Meu nome é: {{ nome }}</p>
+        <hr>
+        <p>Meu Sobrenome é: {{ sobrenome }}</p>
+        <hr>
+        <p>Minha idade é: {{ idade }}</p>
+        <hr>
+    </div>
 </body>
 </html>
