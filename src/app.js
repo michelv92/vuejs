@@ -2,19 +2,21 @@ const MyNameApp = {
     data(){
         return{
             nome: "",
-            sobrenome: "",
-            idade: "",
+            validade: "",
             input_nome: "",
-            input_sobrenome: "",
-            input_idade: ""
+            input_validade: ""
         }
     },
     methods: {
         submitForm(e){
             e.preventDefault();
             this.nome = this.input_nome;
-            this.sobrenome = this.input_sobrenome;
-            this.idade = this.input_idade;
+            this.validade = this.input_validade;
+        },
+        formatValidate(date){
+            if(!date) return "";
+            const [year, month] = date.split("-");
+            return `${month}/${year.slice(-2)}`;
         }
     }
 }
